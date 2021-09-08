@@ -44,7 +44,7 @@ const users = [
   let emails = [];
   let names = [];
   
-  // TODO: rewrite the following using arrow functions
+  // arrow functions
   users.forEach((user) => {
     return emails.push(user.email);
   });
@@ -54,25 +54,22 @@ const users = [
   
   let developers = [];
   users.forEach((user) => {
-    // TODO: rewrite the code below to use object destructuring assignment
-    //       note that you can also use destructuring assignment in the function
-    //       parameter definition
+
+    // object destructuring
     const {name, email, languages} = user;
     // console.log(name);
     // console.log(email);
     // console.log(languages);
   
-    // TODO: rewrite the assignment below to use template strings
     developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
   });
   
-  // TODO: Use `let` for the following variable
   let list = '<ul>';
   
-  // TODO: rewrite the following loop to use a for..of loop
+  // for .. of loop
   for (let developer of developers) {
   
-    // TODO: rewrite the assignment below to use template strings
+    //  template string
     list += `<li>${developer}</li>`;
   };
 
