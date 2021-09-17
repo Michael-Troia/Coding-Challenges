@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactCard from './Components/ContactCard';
 import './style.css';
 
 const App = () => {
@@ -10,17 +11,11 @@ const App = () => {
   }
 
   return (
-    <div className="contact-card">
-      <img src="https://via.placeholder.com/150" alt="profile" />
-      <div className="user-details">
-        <p>Name: Jenny Han</p>
-        <p>Email: Jenny.Han@notreal.com</p>
-        <p>Age: 25</p>
-      </div>
-    </div>
+    <ContactCard/>
   );
 };
 
 export default App;
 
 // React includes event handlers like onClick, onPress, and onSubmit
+// event handlers can use functions previously stored as variables by using curly braces onClick={handleClick}
