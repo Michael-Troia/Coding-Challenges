@@ -11,7 +11,11 @@ const App = () => {
   }
 
   return (
-    <ContactCard/>
+    <>
+      <ContactCard/>
+      <ContactCard/>
+      <ContactCard/>
+    </>
   );
 };
 
