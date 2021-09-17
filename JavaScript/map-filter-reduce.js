@@ -41,37 +41,37 @@ const users = [
       name: 'zach',
       email: 'zach@email.com',
       languages: ['javascript', 'bash'],
-      expeeriece: '2'
+      experience: 2
     },
     {
       name: 'ryan',
       email: 'ryan@email.com',
       languages: ['clojure', 'javascript'],
-      expeeriece: '3'
+      experience: 3
     },
     {
       name: 'luis',
       email: 'luis@email.com',
       languages: ['java', 'scala', 'php'],
-      expeeriece: '1'
+      experience: 1
     },
     {
       name: 'fernando',
       email: 'fernando@email.com',
       languages: ['java', 'php', 'sql'],
-      expeeriece: '4'
+      experience: 4
     },
     {
       name: 'justin',
       email: 'justin@email.com',
       languages: ['html', 'css', 'javascript', 'php'],
-      experience: '5'
+      experience: 5
     },
     {
         name: 'michael',
         email: 'michael@email.com',
         languages: ['javascript', 'java'],
-        experience: '3'
+        experience: 3
     }
   ];
 
@@ -90,13 +90,29 @@ const emails = users.map(n => {
 console.log(emails);
 
 // Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
-const reducer = users.reduce((previousValue, currentValue) => {
-    return previousValue + currentValue.experience;
-});
+const reducer = users.reduce((total, currentValue) => {
+    return total + currentValue.experience;
+}, 0); 
 
-
-console.log(reducer);
+console.log('Average years of experience: ' + (reducer/users.length));
 
 
 // Use .reduce to get the longest email from the list of users.
-// Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
+
+const longestEmail = emails.reduce((longest, currentValue) => {
+    temp = 0;
+    if (currentValue.length > temp) {
+        longest = currentValue;
+        temp = currentValue.length;
+    }
+    return longest;
+});
+
+console.log('longest email: ' + (longestEmail));
+
+// Use .reduce to get the list of user's names in a single string.
+const names = users.reduce((accumulation, currentValue) => {
+    return (accumulation + currentValue.name + ' ');
+})
+
+console.log(names);
