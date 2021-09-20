@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 
 const ContactCard = () => {
+
+    const[showAge, setShowage] = useState(false);
 
     return (
         <div className="contact-card">
@@ -8,7 +10,7 @@ const ContactCard = () => {
 	        <div className="user-details">
 		        <p>Name: Jenny Han</p>
 		        <p>Email: Jenny.Han@notreal.com</p>
-		        <p>Age: 26</p>
+		        {showAge === true ? <p>Age: 26</p> : null}
 	        </div>
         </div>
     );
