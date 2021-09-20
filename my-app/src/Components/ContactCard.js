@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const ContactCard = () => {
 
-    const[showAge, setShowage] = useState(false);
+    const[showAge, setShowAge] = useState(false);
 
     return (
         <div className="contact-card">
@@ -11,6 +11,9 @@ const ContactCard = () => {
 		        <p>Name: Jenny Han</p>
 		        <p>Email: Jenny.Han@notreal.com</p>
 		        {showAge && <p>Age: 26</p>}
+                <button onClick={() => setShowAge(!showAge)}>
+	Toggle Age 
+</button>
 	        </div>
         </div>
     );
