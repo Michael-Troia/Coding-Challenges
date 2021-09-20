@@ -10,7 +10,7 @@ const ContactCard = () => {
 	        <div className="user-details">
 		        <p>Name: Jenny Han</p>
 		        <p>Email: Jenny.Han@notreal.com</p>
-		        {showAge === true ? <p>Age: 26</p> : null}
+		        {showAge && <p>Age: 26</p>}
 	        </div>
         </div>
     );
