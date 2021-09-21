@@ -10,20 +10,23 @@ const App = () => {
     alert('A named function was used to show this alert');
   }
 
-  const contacts = [
-    { name: "Jenny Han", email: "jenny.han@notreal.com", age: 25 },
-    { name: "Jason Long", email: "jason.long@notreal.com", age: 45 },
-    { name: "Peter Pann", email: "peter.pan@neverland.com", age: 100 }
-  ];
+  const [contacts, setContacts] = useState([]);
+
+  fetch("https://randomuser.me/api/?results=3")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    setContacts(data.results);
+  });
 
   return (
     <>
       {contacts.map(contact => (
         <ContactCard
-          avatar="https://via.placeholder.com/150"
-          name={contact.name}
+          avatar={contact.picture.large}
+          name={contact.name.first + " " + contact.name.last}
           email={contact.email}
-          age={contact.age}
+          age={contact.dob.age}
         />
       ))};
     </>
