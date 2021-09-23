@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ContactCard from './Components/ContactCard';
 import './style.css';
 
@@ -11,13 +11,14 @@ const App = () => {
   }
 
   const [contacts, setContacts] = useState([]);
-
-  fetch("https://randomuser.me/api/?results=3")
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    setContacts(data.results);
-  });
+  
+  useEffect(() => { //with an empty array as a parameter at the end, useEffect only runs once
+    fetch("https://randomuser.me/api/?results=3")
+      .then(response => response.json())
+      .then(data => {
+        setContacts(data.results);
+      });
+  }, []);
 
   return (
     <>
